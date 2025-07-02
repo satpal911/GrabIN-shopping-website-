@@ -1,0 +1,13 @@
+.pageLinks:hover{
+    background-color: rgb(45, 58, 70);
+    
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.cartTotal{
+    font-size: 10px;
+    position: absolute;
+    }

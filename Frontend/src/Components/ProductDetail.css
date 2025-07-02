@@ -1,0 +1,14 @@
+.productDetail{
+    width: 500px;
+    height: 500px;
+    margin-top: 100px;
+    border-radius: 5px;
+    border: 1px solid gray;
+
+}
+
+.mainDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,8 @@
+.changeColor:hover{
+    background-color: rgb(0, 238, 255);
+    cursor: pointer;
+}   
+
+.profilePage{
+    margin-top: 110px;
+}
