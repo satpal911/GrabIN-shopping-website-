@@ -25,7 +25,7 @@ const Register = () => {
           <button className='btn btn-primary fs-5'>Continue</button>
           <p className='text-light text-center'>already have account <span onClick={()=> navigate('/login')}><a href="#">Login</a></span></p>
           <p className='text-light text-center small'>
-            By continuing, you agree to Meesho’s<br />
+            By continuing, you agree to GrabIN’s<br />
             <a href="#" className='text-decoration-underline text-info'>Terms & Conditions</a> and{' '}
             <a href="#" className='text-decoration-underline text-info'>Privacy Policy</a>
           </p>

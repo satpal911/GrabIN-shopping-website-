@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom'
   Electronics: ["smartphones", 'laptops','electronics'],
   Trending: ['trending'],
   Kids: ['kids'],
-  Bags: ['womens-bags','bag'],
+  Bags: ['womens-bags','bag', "bags"],
   Sports: ['sports']
 };
 

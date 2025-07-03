@@ -22,7 +22,7 @@ const Login = () => {
           <input className='form-control' type="password" placeholder='Enter Password' />
           <button className='btn btn-primary fs-5'>Login</button>
           <p className='text-light text-center small'>
-            By continuing, you agree to Meesho’s<br />
+            By continuing, you agree to GrabIN’s<br />
             <a href="#" className='text-decoration-underline text-info'>Terms & Conditions</a> and{' '}
             <a href="#" className='text-decoration-underline text-info'>Privacy Policy</a>
           </p>
