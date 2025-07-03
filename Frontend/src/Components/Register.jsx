@@ -21,6 +21,7 @@ const Register = () => {
           />
           <h1 className='text-light text-center fs-5'>Sign Up to view your profile</h1>
           <input className='form-control' type="text" placeholder='Enter Phone' />
+          <input className='form-control' type="text" placeholder='Enter Email' />
           <button className='btn btn-primary fs-5'>Continue</button>
           <p className='text-light text-center'>already have account <span onClick={()=> navigate('/login')}><a href="#">Login</a></span></p>
           <p className='text-light text-center small'>

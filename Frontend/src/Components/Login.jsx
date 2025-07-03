@@ -18,7 +18,7 @@ const Login = () => {
             alt="LoginImage"
           />
           <h1 className='text-light text-center fs-5'>Login to your profile</h1>
-          <input className='form-control' type="text" placeholder='Enter Phone' />
+          <input className='form-control' type="text" placeholder='Enter Phone or  Email' />
           <input className='form-control' type="password" placeholder='Enter Password' />
           <button className='btn btn-primary fs-5'>Login</button>
           <p className='text-light text-center small'>

@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import './Products.css'
 import {useCart} from 'react-use-cart'
+import { useNavigate } from 'react-router-dom'
 
  const categoryMap = {
   Men: ['men','top'],
@@ -19,6 +20,8 @@ import {useCart} from 'react-use-cart'
 };
 
 const Products = () => {
+
+  const navigate = useNavigate()
 
   const {addItem} = useCart()
 
@@ -133,15 +136,17 @@ const Products = () => {
      {filtered.length > 0 ? (  
      filtered.map((item,index)=>(
       <div className='col-md-3 col-12 px-5 py-2' key={index}>
-         <div className='product-card border border-1'>
+         <div className='product-card border border-1'
+         onClick={()=> navigate('/productDetail',{state:{product: item }})}>
            <img className='rounded' src={item.image} alt="image" />
           <h3>{item.title}</h3>
           <p className='product-description'>{item.description}</p>
           <h2>₹ {item.price}</h2>
           <div className='d-flex justify-content-around'>
-            <button className='btn btn-danger text-light fw-bold border-0 py-1 px-3 rounded'>Buy</button>
+            <button className='btn btn-danger text-light fw-bold border-0 py-1 px-3 rounded'
+            onClick={(e)=>{e.stopPropagation(); navigate('/payment',{state:{type: 'buy', item }})}}>Buy</button>
             <button className='btn btn-outline-danger fw-bold py-1 px-3 rounded'
-            onClick={()=> addItem(item)}>Add to Cart</button>
+            onClick={(e)=>{e.stopPropagation(); addItem(item)}}>Add to Cart</button>
           </div>
          </div>
       </div>

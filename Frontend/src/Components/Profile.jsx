@@ -13,7 +13,8 @@ const Profile = () => {
             onClick={()=> navigate('/cart')}>
               <h5>Cart</h5>
             </div>
-            <div className='changeColor col-md-3 col-6 border border p-4'>
+            <div className='changeColor col-md-3 col-6 border border p-4'
+            onClick={()=> navigate('/payment')}>
               <h5>Payment</h5>
             </div>
             <div className='changeColor col-md-3 col-6 border border p-4'>
