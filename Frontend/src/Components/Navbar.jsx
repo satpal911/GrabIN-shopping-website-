@@ -6,7 +6,7 @@ import { useCart } from 'react-use-cart'
 const Navbar = () => {
   const navigate = useNavigate()
 
-  const {totalItems} = useCart()
+  const {items} = useCart()
 
   return (
     <nav className='navbar navbar-expand-lg bg-dark fixed-top'>
@@ -47,7 +47,7 @@ const Navbar = () => {
             </li>
             <li className='nav-item'>
               <Link to='/Cart' className='nav-link text-light fw-bold'>
-                <i className='fa-solid fa-cart-shopping'></i><span className='cartTotal bg-danger rounded px-1'>{totalItems}</span>
+                <i className='fa-solid fa-cart-shopping'></i><span className='cartTotal bg-danger rounded px-1'>{items.length}</span>
               </Link>
             </li>
             <li className='nav-item'>
