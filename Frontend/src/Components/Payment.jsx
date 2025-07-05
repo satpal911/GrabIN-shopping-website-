@@ -8,7 +8,8 @@ const Payment = () => {
      console.log(`received cart total ${cartTotal}`)
      
   return (
-    <div className='Payment bg-secondary-subtle shadow-sm d-flex flex-column'>
+    <div className='Payment bg-secondary-subtle shadow-sm d-flex flex-column '
+    style={{ width: '100%', maxWidth: '400px', minHeight: '500px', marginTop:'100px', }}>
         <p className='fs-3 m-0 fw-bold'>Grab<span className='text-success'>IN</span></p>
        {type === 'buy' && item && (
   <p className='m-0'>{item.title}</p>

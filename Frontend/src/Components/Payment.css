@@ -1,9 +1,9 @@
 .Payment{
-    margin: 120px 450px;
-    height: 75vh;
     padding: 20px;
     border: 1px solid gray;
     border-radius: 10px;
+    margin-left: 50%;
+    transform: translate(-50%);
    
 }
 

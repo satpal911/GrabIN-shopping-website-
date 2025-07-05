@@ -2,11 +2,24 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './Navbar.css'
 import { useCart } from 'react-use-cart'
+import { useState } from 'react'
 
 const Navbar = () => {
   const navigate = useNavigate()
 
   const {items} = useCart()
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  
+  const toggleMenu = () =>{
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  const handleNavClick = () =>{
+    if(window.innerWidth <= 576){
+      setIsMenuOpen(false)
+    }
+  }
 
   return (
     <nav className='navbar navbar-expand-lg bg-dark fixed-top'>
@@ -25,41 +38,46 @@ const Navbar = () => {
         <button
           className='navbar-toggler border-0 p-0'
           type='button'
-          data-bs-toggle='collapse'
-          data-bs-target='#navbarNav'
+          onClick={toggleMenu}
           aria-controls='navbarNav'
-          aria-expanded='false'
+          aria-expanded={isMenuOpen}
           aria-label='Toggle navigation'
         >
           <span className='navbar-toggler-icon text-light'><i className="fa-solid fa-bars"></i></span>
         </button>
 
         {/* Collapsible Menu */}
-        <div className='collapse navbar-collapse justify-content-end' id='navbarNav'>
+        <div className={`collapse navbar-collapse justify-content-end ${isMenuOpen ? 'show' : ''}`} id='navbarNav'>
           <ul className='navbar-nav gap-3 align-items-center fs-5'>
-            <li className='nav-item'>
-              <Link to='/' className='nav-link text-light fw-bold'>
-                <i className='fa-solid fa-store'></i>
+            <li className='nav-item '>
+              <Link to='/' className='nav-link text-light fw-bold '
+              onClick={handleNavClick}>
+                <i className='fa-solid fa-store '></i>
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/Products' className='nav-link text-light fw-bold'>Products</Link>
+              <Link to='/Products' className='nav-link text-light fw-bold'
+              onClick={handleNavClick}>Products</Link>
             </li>
             <li className='nav-item'>
-              <Link to='/Cart' className='nav-link text-light fw-bold'>
+              <Link to='/Cart' className='nav-link text-light fw-bold'
+              onClick={handleNavClick}>
                 <i className='fa-solid fa-cart-shopping'></i><span className='cartTotal bg-danger rounded px-1'>{items.length}</span>
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/Profile' className='nav-link text-light fw-bold'>
+              <Link to='/Profile' className='nav-link text-light fw-bold'
+              onClick={handleNavClick}>
                 <i className='fa-solid fa-user'></i>
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/Register' className='nav-link text-light fw-bold'>Register</Link>
+              <Link to='/Register' className='nav-link text-light fw-bold'
+              onClick={handleNavClick}>Register</Link>
             </li>
             <li className='nav-item'>
-              <Link to='/Admin' className='nav-link text-light fw-bold'>Admin</Link>
+              <Link to='/Admin' className='nav-link text-light fw-bold'
+              onClick={handleNavClick}>Admin</Link>
             </li>
           </ul>
         </div>
