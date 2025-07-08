@@ -41,3 +41,34 @@ export const registerUser = async (req,res) => {                       //Registe
         })
     }
 }
+
+export const loginUser = async (req,res) => {                     //Login controller
+    try {
+        const {email, password} = req.body
+
+
+        
+        const user = await User.findOne({email})
+        console.log(user)
+
+        const hashPassword = await bcrypt.compare(password, user.password)
+
+        if(!User || !hashPassword){
+           return res.status(400).json({
+                status: 0,
+                message: "invalid email or password"
+            })
+        }
+
+        res.status(200).json({
+            status:1,
+            message:"user login successfully"
+        })
+    } catch (error) {
+        res.status(500).json({
+            status:0,
+            message: "login failed",
+            error:error.message
+        })
+    }
+}
