@@ -1,16 +1,18 @@
 import express from 'express'
 import createDb from './database/db.js'
 import cors from 'cors'
-const port = 4000
+import dotenv from 'dotenv'
 import route from './Routes/Blog.routes.js'
 import userRoute from './Routes/user.routes.js'
+
+dotenv.config()
+
+const port = process.env.port
 const app = express()
 
 app.use(cors())
 app.use(express.json())
 app.use('/api',userRoute)
-
-
 
 createDb()
 .then(()=>{
