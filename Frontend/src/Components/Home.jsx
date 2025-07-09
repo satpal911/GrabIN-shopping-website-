@@ -10,7 +10,7 @@ const Home = () => {
   const {addItem} = useCart()
   const [products, setProducts] = useState([])
    const getApi = async () => {
-  const res = await axios("http://localhost:4000/api/");
+  const res = await axios("http://localhost:4000/api/blog");
   // Map to add 'id' field if it's missing but you have '_id'
   const productsWithId = res.data.data.map(item => ({
     ...item,

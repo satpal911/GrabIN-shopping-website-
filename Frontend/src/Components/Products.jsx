@@ -4,7 +4,7 @@ import { useState } from 'react'
 import './Products.css'
 import {useCart} from 'react-use-cart'
 import { useNavigate } from 'react-router-dom'
-
+axios.defaults.withCredentials=true
  const categoryMap = {
   Men: ['men','top'],
   Women: ['women'],
@@ -26,11 +26,13 @@ const Products = () => {
   const {addItem} = useCart()
 
   const [products, setProducts] = useState([])
+  // console.log(products)
   const [search, setSearch] = useState('')
   const [filtered, setFiltered] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('All')
   const getApi = async () => {
-  const res = await axios("http://localhost:4000/api/");
+  const res = await axios.get("http://localhost:4000/api/blog/");
+  console.log(res)
   // Map to add 'id' field if it's missing but you have '_id'
   const productsWithId = res.data.data.map(item => ({
     ...item,

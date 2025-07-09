@@ -3,7 +3,7 @@ import './Payment.css'
 import { useLocation } from 'react-router-dom'
 const Payment = () => {
     const location = useLocation() //hooks used for getting value like props
-
+    
      const {type,item,cartTotal} = location.state || {}
      console.log(`received cart total ${cartTotal}`)
      
