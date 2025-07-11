@@ -16,7 +16,7 @@ const Admin = () => {
 
   const getApi = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/");
+      const res = await axios.get("http://localhost:4000/api/blog");
       setData(res.data.data);
     } catch (error) {
       console.log(`Data not fetched: ${error}`);
@@ -42,7 +42,7 @@ const Admin = () => {
     formData.append('image',file)
 
     try {
-      const res = await axios.post("http://localhost:4000/api/", formData);
+      const res = await axios.post("http://localhost:4000/api/blog", formData);
       console.log(`data send successfully ${res}`)
       alert("Data sent successfully");
       setForm({ title: "", description: "", price: "", category: ""});
@@ -56,7 +56,7 @@ const Admin = () => {
 
   const doDelete = async (item) => {
     try {
-      const res = await axios.delete(`http://localhost:4000/api/${item._id}`);
+      const res = await axios.delete(`http://localhost:4000/api/blog/${item._id}`);
       if (res.status === 200) {
         alert("Data deleted");
         getApi();
@@ -92,7 +92,7 @@ const Admin = () => {
   formData.append("existingImage", preview); // send old image URL
 }
     try {
-      const res = await axios.put(`http://localhost:4000/api/${indexId}`, formData, {
+      const res = await axios.put(`http://localhost:4000/api/blog/${indexId}`, formData, {
   headers: {
     'Content-Type': 'multipart/form-data'
   }
